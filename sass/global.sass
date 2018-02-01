@@ -1,0 +1,82 @@
+@import "mixin"
+@import "compass/css3"
+@import "extend"
+// @import url(http://fonts.googleapis.com/earlyaccess/notosanstc.css)
+// @import url(https://fonts.googleapis.com/css?family=Lora)
+
+/*frame*/
+*
+	-webkit-box-sizing: border-box
+	-moz-box-sizing: border-box
+	box-sizing: border-box
+	outline: none 
+
+html,body
+	height: 100%
+	width: 100%
+ 
+body
+	font-family: "Arial", "微軟正黑體"
+	// font-family: 'Lora','Noto Sans TC', sans-serif
+	font-size: 100%
+
+ul
+	@extend %clearfix
+
+table
+	width: 100%
+	
+/* 基本樣式 */
+// @import "global/button.sass"	
+// @import "global/icon.sass"	
+// @import "global/input.sass"	
+	
+.mask
+	background: #fff
+	opacity: 0.5
+	height: 100% 
+	width: 100% 
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 998  
+	display: none  
+	
+.full-width
+	max-width: 1160px
+	width: 100% 
+	margin: 0 auto 
+	position: relative 
+	@extend %clearfix
+	
+.breadcrumbs
+	+font(#282726,0.875rem,1em)
+	a
+		color: #282726
+	span
+		margin: 0 5px 
+	
+// @import "global/header.sass"				
+// @import "global/footer.sass"
+
+@media only screen and (min-width: 1025px) and (max-width: 1366px)
+	body
+		font-size: 90%
+@media only screen and (min-width: 900px) and (max-width: 1024px)
+	body
+		font-size: 80% 
+@media only screen and (min-width: 768px) and (max-width: 899px)
+	body
+		font-size: 70% 
+@media only screen and (min-width: 480px) and (max-width: 767px)
+	body
+		font-size: 60% 
+@media only screen and (min-width: 320px) and (max-width: 479px)
+	body
+		font-size: 50% 
+		
+
+// @media only screen and (min-width: 769px) and (max-width: 1161px)
+// @media only screen and (min-width: 641px) and (max-width: 768px)
+// @media only screen and (min-width: 641px) and (max-width: 1161px)
+// @media only screen and (min-width: 320px) and (max-width: 640px)

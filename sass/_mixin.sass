@@ -1,0 +1,85 @@
+
+@mixin bg($img)
+	background: url("../images/#{$img}.png") 0 0 no-repeat
+	width: image-width("../images/#{$img}.png")
+	height: image-height("../images/#{$img}.png")
+
+@mixin justifyalign
+	text-align: justify
+	text-justify: inter-ideograph
+
+@mixin gradient($color1,$color2)
+	background: -webkit-gradient(linear, 0 0, 0 bottom, from($color1), to($color2))
+	background: -webkit-linear-gradient($color1, $color2)
+	background: -moz-linear-gradient($color1, $color2)
+	background: -ms-linear-gradient($color1, $color2)
+	background: -o-linear-gradient($color1, $color2)
+	background: linear-gradient($color1, $color2)
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color1}', endColorstr='#{$color2}', GradientType=0 )
+	
+@mixin boxshadow($arg)
+	-webkit-box-shadow: $arg
+	-moz-box-shadow: $arg
+	box-shadow: $arg
+
+@mixin font($color,$size,$height)
+	color: $color
+	font-size: $size
+	line-height: $height
+
+@mixin radius($size)
+	-webkit-border-radius: $size
+	-moz-border-radius: $size
+	border-radius: $size
+	
+@mixin opacity($opacity)
+	opacity: $opacity
+	$opacity-ie: $opacity * 100
+	filter: alpha(opacity=$opacity-ie)
+
+@mixin animation($str)
+	-webkit-animation: #{$str}
+	-moz-animation: #{$str}
+	-ms-animation: #{$str}
+	-o-animation: #{$str}
+	animation: #{$str}
+
+@mixin transition($args)
+	-webkit-transition: $args
+	-moz-transition: $args
+	-ms-transition: $args
+	-o-transition: $args
+	transition: $args
+
+@mixin transform($arg)
+	-webkit-transform: $arg
+	-moz-transform: $arg
+	-ms-transform: $arg
+	-o-transform: $arg
+	transform: $arg
+
+@mixin easeOut
+	-webkit-transition: all .6s cubic-bezier(0.23, 1, 0.32, 1)
+	-moz-transition: all .6s cubic-bezier(0.23, 1, 0.32, 1)
+	-ms-transition: all .6s cubic-bezier(0.23, 1, 0.32, 1)
+	-o-transition: all .6s cubic-bezier(0.23, 1, 0.32, 1)
+	transition: all .6s cubic-bezier(0.23, 1, 0.32, 1)
+
+
+@mixin breakpoint($bp-large-width)
+	@media only screen and (max-width: $bp-large-width)
+		@content
+
+//字體使用Rem
+@function calculateRem($size)
+	$remSize: $size / 16px
+	@return $remSize * 1rem
+@mixin font-size($size)
+	font-size: $size
+	font-size: calculateRem($size)
+
+//breakpoint
+@mixin breakpoint($bp-large-width)
+	@media only screen and (max-width: $bp-large-width)
+		@content
+
